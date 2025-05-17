@@ -261,7 +261,7 @@
         
         .timeline {
             position: relative;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px 0;
         }
@@ -287,12 +287,12 @@
         
         .timeline-item:nth-child(odd) {
             left: 0;
-            padding-right: 70px;
+            padding-right: 30px;
         }
         
         .timeline-item:nth-child(even) {
             left: 50%;
-            padding-left: 70px;
+            padding-left: 30px;
         }
         
         .timeline-content {
@@ -363,23 +363,22 @@
         
         .timeline-desc ul {
             margin-left: 20px;
+            list-style-type: none;
         }
         
         .timeline-desc li {
             margin-bottom: 10px;
             position: relative;
-            padding-left: 15px;
+            padding-left: 20px;
         }
         
         .timeline-desc li::before {
-            content: '';
+            content: '•';
             position: absolute;
             left: 0;
-            top: 10px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: var(--secondary);
+            color: var(--secondary);
+            font-size: 20px;
+            line-height: 1;
         }
         
         .accomplishment {
@@ -393,6 +392,32 @@
         
         .accomplishment strong {
             color: var(--primary);
+        }
+        
+        .show-more-btn {
+            background: none;
+            border: none;
+            color: var(--secondary);
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .show-more-btn i {
+            transition: transform 0.3s;
+        }
+        
+        .show-more-btn.active i {
+            transform: rotate(180deg);
+        }
+        
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
         }
         
         /* Education Section */
@@ -734,9 +759,16 @@
                                 <li>Collaborate with cross-functional teams to define project requirements, run workshops, and design innovative, user-focused product experiences</li>
                                 <li>Develop detailed wireframes, interactive prototypes, and final assets, ensuring seamless alignment between user goals and business objectives</li>
                                 <li>Oversee product design from ideation to launch, incorporating user feedback and optimizing the experience throughout the development cycle</li>
-                                <li>Monitor service performance, proactively identify issues, manage incidents, and ensure prompt resolution through effective communication</li>
-                                <li>Analyze performance data and user feedback to drive continuous improvements, enhancing both the user experience and product effectiveness</li>
                             </ul>
+                            <div class="collapsible-content" id="interswitch-more">
+                                <ul>
+                                    <li>Monitor service performance, proactively identify issues, manage incidents, and ensure prompt resolution through effective communication</li>
+                                    <li>Analyze performance data and user feedback to drive continuous improvements, enhancing both the user experience and product effectiveness</li>
+                                </ul>
+                            </div>
+                            <button class="show-more-btn" data-target="interswitch-more">
+                                Show More <i class="fas fa-chevron-down"></i>
+                            </button>
                         </div>
                         <div class="accomplishment">
                             <strong>Key accomplishment:</strong> Designed over 27 user flows, and low-fidelity UI for different services aiding better understanding of the product for all stakeholders.
@@ -760,10 +792,17 @@
                                 <li>Design low-fidelity and high-fidelity prototypes, collaborating closely with interdisciplinary teams to test and iterate on new product concepts</li>
                                 <li>Crafted, fine-tuned, and executed over 50+ test cases for manual software testing, while promptly reporting bugs and defects to developers</li>
                                 <li>Design test strategies and procedures from specifications, coordinating activities from research to delivery for complete product support</li>
-                                <li>Document project progress and tasks on JIRA for efficient team collaboration</li>
-                                <li>Conduct user research interviews and surveys, translating insights into user journey map to drive informed design decisions for optimal user experience</li>
-                                <li>Develop comprehensive product requirement documents and create compelling business product pitches using Microsoft PowerPoint</li>
                             </ul>
+                            <div class="collapsible-content" id="palmpay-more">
+                                <ul>
+                                    <li>Document project progress and tasks on JIRA for efficient team collaboration</li>
+                                    <li>Conduct user research interviews and surveys, translating insights into user journey map to drive informed design decisions for optimal user experience</li>
+                                    <li>Develop comprehensive product requirement documents and create compelling business product pitches using Microsoft PowerPoint</li>
+                                </ul>
+                            </div>
+                            <button class="show-more-btn" data-target="palmpay-more">
+                                Show More <i class="fas fa-chevron-down"></i>
+                            </button>
                         </div>
                         <div class="accomplishment">
                             <strong>Key accomplishment:</strong> Managed the implementation of direct card issuer routing project with 4 commercial banks for transaction processing.
@@ -786,9 +825,16 @@
                                 <li>Provided timely and efficient technical support to customers, resolving inquiries and issues related to Internet Banking product functionality and usage</li>
                                 <li>Collaborated with database administrators to manage staff and user profiles, ensuring accurate transaction access and role assignments</li>
                                 <li>Monitored system health to maintain optimal service availability and uptime</li>
-                                <li>Worked closely with developers to review system and transaction logs to resolve technical issues</li>
-                                <li>Generated transaction reports detailing successful, failed, and pending transactions for 20 African countries, to guide business decision-making</li>
                             </ul>
+                            <div class="collapsible-content" id="uba-tech-more">
+                                <ul>
+                                    <li>Worked closely with developers to review system and transaction logs to resolve technical issues</li>
+                                    <li>Generated transaction reports detailing successful, failed, and pending transactions for 20 African countries, to guide business decision-making</li>
+                                </ul>
+                            </div>
+                            <button class="show-more-btn" data-target="uba-tech-more">
+                                Show More <i class="fas fa-chevron-down"></i>
+                            </button>
                         </div>
                         <div class="accomplishment">
                             <strong>Key accomplishment:</strong> On-boarded 7,130 merchants on NIBSS QR (NQR) payment solution.
@@ -811,10 +857,17 @@
                                 <li>Enrolled over 4,600 POS customers for agency & merchant businesses</li>
                                 <li>Documented business functional requirements, working closely with the product managers</li>
                                 <li>Ensured POS products meet business requirements, while managing web application projects from resource allocation to deployment and maintenance</li>
-                                <li>Analyzed transaction and customer data to guide business decisions and generated POS performance reports for management</li>
-                                <li>Engaged merchants for product feedback and customer experience survey</li>
-                                <li>Engaged NIBSS, PTSPs, and other POS stake-holders for business continuity</li>
                             </ul>
+                            <div class="collapsible-content" id="uba-merchant-more">
+                                <ul>
+                                    <li>Analyzed transaction and customer data to guide business decisions and generated POS performance reports for management</li>
+                                    <li>Engaged merchants for product feedback and customer experience survey</li>
+                                    <li>Engaged NIBSS, PTSPs, and other POS stake-holders for business continuity</li>
+                                </ul>
+                            </div>
+                            <button class="show-more-btn" data-target="uba-merchant-more">
+                                Show More <i class="fas fa-chevron-down"></i>
+                            </button>
                         </div>
                         <div class="accomplishment">
                             <strong>Key accomplishment:</strong> Authored a POS Handbook which detailed the technical diagnosis of POS terminals, and customer support processes for POS.
@@ -837,8 +890,15 @@
                                 <li>ICT Personnel – In charge of setting up staff computers, software installation & diagnosis</li>
                                 <li>Designed 3D landscape visualization design of relaxation parks and gardens</li>
                                 <li>Created Interior / Exterior 3D Model designs</li>
-                                <li>Provided weekly progress report on office activities</li>
                             </ul>
+                            <div class="collapsible-content" id="laspark-more">
+                                <ul>
+                                    <li>Provided weekly progress report on office activities</li>
+                                </ul>
+                            </div>
+                            <button class="show-more-btn" data-target="laspark-more">
+                                Show More <i class="fas fa-chevron-down"></i>
+                            </button>
                         </div>
                         <div class="accomplishment">
                             <strong>Key accomplishment:</strong> Designed 3D Gazebo, round-about and other landscapes for visualization before the physical structures are built.
@@ -861,8 +921,15 @@
                                 <li>Organized seminars and training with the team for Pastors and Church members</li>
                                 <li>Managed day-to-day office operations, including meeting scheduling, file organization, and ensuring efficient administrative support</li>
                                 <li>Conducted documentation research for Church activities</li>
-                                <li>Facilitated communication with other Pastors via emails and phone calls</li>
                             </ul>
+                            <div class="collapsible-content" id="church-more">
+                                <ul>
+                                    <li>Facilitated communication with other Pastors via emails and phone calls</li>
+                                </ul>
+                            </div>
+                            <button class="show-more-btn" data-target="church-more">
+                                Show More <i class="fas fa-chevron-down"></i>
+                            </button>
                         </div>
                         <div class="accomplishment">
                             <strong>Key accomplishment:</strong> Coordinated the production of over 600 copies of 2013 conference material, from content arrangement to printing and packaging.
@@ -1043,6 +1110,23 @@
                 item.style.transform = 'translateY(20px)';
                 item.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
                 observer.observe(item);
+            });
+
+            // Collapsible functionality
+            const showMoreButtons = document.querySelectorAll('.show-more-btn');
+            showMoreButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        this.classList.remove('active');
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        this.classList.add('active');
+                    }
+                });
             });
         });
     </script>
