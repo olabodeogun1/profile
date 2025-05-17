@@ -276,6 +276,7 @@
             left: 50%;
             margin-left: -1.5px;
             border-radius: 3px;
+            z-index: 1;
         }
         
         .timeline-item {
@@ -295,6 +296,25 @@
             padding-left: 30px;
         }
         
+        .timeline-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--secondary);
+            border-radius: 50%;
+            top: 30px;
+            z-index: 2;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-marker {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-marker {
+            left: -10px;
+        }
+        
         .timeline-content {
             background-color: white;
             border-radius: 12px;
@@ -308,26 +328,6 @@
         .timeline-content:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 4px solid var(--secondary);
-            border-radius: 50%;
-            top: 30px;
-            z-index: 1;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            right: -10px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content::before {
-            left: -10px;
         }
         
         .timeline-date {
@@ -404,6 +404,13 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .show-more-btn:hover {
+            background-color: rgba(49, 130, 206, 0.1);
         }
         
         .show-more-btn i {
@@ -605,7 +612,7 @@
                 left: 0;
             }
             
-            .timeline-content::before {
+            .timeline-marker {
                 left: 21px;
             }
         }
@@ -745,6 +752,7 @@
             <div class="timeline">
                 <!-- Interswitch -->
                 <div class="timeline-item">
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">
                             <i class="far fa-calendar-alt"></i> August 2024 – Present
@@ -756,16 +764,14 @@
                         <div class="timeline-desc">
                             <ul>
                                 <li>Lead comprehensive user research, creating personas and journey maps to transform insights into intuitive design solutions that address key pain points</li>
-                                <li>Collaborate with cross-functional teams to define project requirements, run workshops, and design innovative, user-focused product experiences</li>
-                                <li>Develop detailed wireframes, interactive prototypes, and final assets, ensuring seamless alignment between user goals and business objectives</li>
-                                <li>Oversee product design from ideation to launch, incorporating user feedback and optimizing the experience throughout the development cycle</li>
-                            </ul>
-                            <div class="collapsible-content" id="interswitch-more">
-                                <ul>
+                                <div class="collapsible-content" id="interswitch-more">
+                                    <li>Collaborate with cross-functional teams to define project requirements, run workshops, and design innovative, user-focused product experiences</li>
+                                    <li>Develop detailed wireframes, interactive prototypes, and final assets, ensuring seamless alignment between user goals and business objectives</li>
+                                    <li>Oversee product design from ideation to launch, incorporating user feedback and optimizing the experience throughout the development cycle</li>
                                     <li>Monitor service performance, proactively identify issues, manage incidents, and ensure prompt resolution through effective communication</li>
                                     <li>Analyze performance data and user feedback to drive continuous improvements, enhancing both the user experience and product effectiveness</li>
-                                </ul>
-                            </div>
+                                </div>
+                            </ul>
                             <button class="show-more-btn" data-target="interswitch-more">
                                 Show More <i class="fas fa-chevron-down"></i>
                             </button>
@@ -778,6 +784,7 @@
 
                 <!-- Palm Pay -->
                 <div class="timeline-item">
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">
                             <i class="far fa-calendar-alt"></i> September 2022 – July 2024
@@ -789,17 +796,15 @@
                         <div class="timeline-desc">
                             <ul>
                                 <li>Conduct user testing to validate product viability, aligning with user needs and integrating UX design throughout the product development cycle</li>
-                                <li>Design low-fidelity and high-fidelity prototypes, collaborating closely with interdisciplinary teams to test and iterate on new product concepts</li>
-                                <li>Crafted, fine-tuned, and executed over 50+ test cases for manual software testing, while promptly reporting bugs and defects to developers</li>
-                                <li>Design test strategies and procedures from specifications, coordinating activities from research to delivery for complete product support</li>
-                            </ul>
-                            <div class="collapsible-content" id="palmpay-more">
-                                <ul>
+                                <div class="collapsible-content" id="palmpay-more">
+                                    <li>Design low-fidelity and high-fidelity prototypes, collaborating closely with interdisciplinary teams to test and iterate on new product concepts</li>
+                                    <li>Crafted, fine-tuned, and executed over 50+ test cases for manual software testing, while promptly reporting bugs and defects to developers</li>
+                                    <li>Design test strategies and procedures from specifications, coordinating activities from research to delivery for complete product support</li>
                                     <li>Document project progress and tasks on JIRA for efficient team collaboration</li>
                                     <li>Conduct user research interviews and surveys, translating insights into user journey map to drive informed design decisions for optimal user experience</li>
                                     <li>Develop comprehensive product requirement documents and create compelling business product pitches using Microsoft PowerPoint</li>
-                                </ul>
-                            </div>
+                                </div>
+                            </ul>
                             <button class="show-more-btn" data-target="palmpay-more">
                                 Show More <i class="fas fa-chevron-down"></i>
                             </button>
@@ -812,6 +817,7 @@
 
                 <!-- UBA Technical Support -->
                 <div class="timeline-item">
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">
                             <i class="far fa-calendar-alt"></i> March 2020 – August 2022
@@ -823,15 +829,13 @@
                         <div class="timeline-desc">
                             <ul>
                                 <li>Provided timely and efficient technical support to customers, resolving inquiries and issues related to Internet Banking product functionality and usage</li>
-                                <li>Collaborated with database administrators to manage staff and user profiles, ensuring accurate transaction access and role assignments</li>
-                                <li>Monitored system health to maintain optimal service availability and uptime</li>
-                            </ul>
-                            <div class="collapsible-content" id="uba-tech-more">
-                                <ul>
+                                <div class="collapsible-content" id="uba-tech-more">
+                                    <li>Collaborated with database administrators to manage staff and user profiles, ensuring accurate transaction access and role assignments</li>
+                                    <li>Monitored system health to maintain optimal service availability and uptime</li>
                                     <li>Worked closely with developers to review system and transaction logs to resolve technical issues</li>
                                     <li>Generated transaction reports detailing successful, failed, and pending transactions for 20 African countries, to guide business decision-making</li>
-                                </ul>
-                            </div>
+                                </div>
+                            </ul>
                             <button class="show-more-btn" data-target="uba-tech-more">
                                 Show More <i class="fas fa-chevron-down"></i>
                             </button>
@@ -844,6 +848,7 @@
 
                 <!-- UBA Merchant Acquiring -->
                 <div class="timeline-item">
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">
                             <i class="far fa-calendar-alt"></i> August 2016 – February 2020
@@ -855,16 +860,14 @@
                         <div class="timeline-desc">
                             <ul>
                                 <li>Enrolled over 4,600 POS customers for agency & merchant businesses</li>
-                                <li>Documented business functional requirements, working closely with the product managers</li>
-                                <li>Ensured POS products meet business requirements, while managing web application projects from resource allocation to deployment and maintenance</li>
-                            </ul>
-                            <div class="collapsible-content" id="uba-merchant-more">
-                                <ul>
+                                <div class="collapsible-content" id="uba-merchant-more">
+                                    <li>Documented business functional requirements, working closely with the product managers</li>
+                                    <li>Ensured POS products meet business requirements, while managing web application projects from resource allocation to deployment and maintenance</li>
                                     <li>Analyzed transaction and customer data to guide business decisions and generated POS performance reports for management</li>
                                     <li>Engaged merchants for product feedback and customer experience survey</li>
                                     <li>Engaged NIBSS, PTSPs, and other POS stake-holders for business continuity</li>
-                                </ul>
-                            </div>
+                                </div>
+                            </ul>
                             <button class="show-more-btn" data-target="uba-merchant-more">
                                 Show More <i class="fas fa-chevron-down"></i>
                             </button>
@@ -877,6 +880,7 @@
 
                 <!-- LASPARK Industrial Training -->
                 <div class="timeline-item">
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">
                             <i class="far fa-calendar-alt"></i> February 2016 – July 2016
@@ -888,14 +892,12 @@
                         <div class="timeline-desc">
                             <ul>
                                 <li>ICT Personnel – In charge of setting up staff computers, software installation & diagnosis</li>
-                                <li>Designed 3D landscape visualization design of relaxation parks and gardens</li>
-                                <li>Created Interior / Exterior 3D Model designs</li>
-                            </ul>
-                            <div class="collapsible-content" id="laspark-more">
-                                <ul>
+                                <div class="collapsible-content" id="laspark-more">
+                                    <li>Designed 3D landscape visualization design of relaxation parks and gardens</li>
+                                    <li>Created Interior / Exterior 3D Model designs</li>
                                     <li>Provided weekly progress report on office activities</li>
-                                </ul>
-                            </div>
+                                </div>
+                            </ul>
                             <button class="show-more-btn" data-target="laspark-more">
                                 Show More <i class="fas fa-chevron-down"></i>
                             </button>
@@ -908,6 +910,7 @@
 
                 <!-- Christ Life Assembly -->
                 <div class="timeline-item">
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">
                             <i class="far fa-calendar-alt"></i> December 2011 – September 2013
@@ -919,14 +922,12 @@
                         <div class="timeline-desc">
                             <ul>
                                 <li>Organized seminars and training with the team for Pastors and Church members</li>
-                                <li>Managed day-to-day office operations, including meeting scheduling, file organization, and ensuring efficient administrative support</li>
-                                <li>Conducted documentation research for Church activities</li>
-                            </ul>
-                            <div class="collapsible-content" id="church-more">
-                                <ul>
+                                <div class="collapsible-content" id="church-more">
+                                    <li>Managed day-to-day office operations, including meeting scheduling, file organization, and ensuring efficient administrative support</li>
+                                    <li>Conducted documentation research for Church activities</li>
                                     <li>Facilitated communication with other Pastors via emails and phone calls</li>
-                                </ul>
-                            </div>
+                                </div>
+                            </ul>
                             <button class="show-more-btn" data-target="church-more">
                                 Show More <i class="fas fa-chevron-down"></i>
                             </button>
@@ -1057,7 +1058,7 @@
                 <div class="contact-form">
                    <form action="https://formsubmit.co/olabodeogun1@gmail.com" method="POST">
                         <input type="hidden" name="_subject" value="New contact from portfolio">
-                        <input type="hidden" name="_next" value="https://olabodeogun1.github.io/profile/thank-you.html">
+                        <input type="hidden" name="_next" value="https://yourportfolio.com/thank-you.html">
         
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" placeholder="Your Name" required>
@@ -1092,8 +1093,8 @@
     </footer>
 
     <script>
-        // Add animation to timeline items
         document.addEventListener('DOMContentLoaded', function() {
+            // Timeline animation
             const timelineItems = document.querySelectorAll('.timeline-item');
             
             const observer = new IntersectionObserver((entries) => {
@@ -1112,18 +1113,21 @@
                 observer.observe(item);
             });
 
-            // Collapsible functionality
+            // Show More/Less functionality
             const showMoreButtons = document.querySelectorAll('.show-more-btn');
             showMoreButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const targetId = this.getAttribute('data-target');
                     const content = document.getElementById(targetId);
+                    const icon = this.querySelector('i');
                     
                     if (content.style.maxHeight) {
                         content.style.maxHeight = null;
+                        this.innerHTML = 'Show More <i class="fas fa-chevron-down"></i>';
                         this.classList.remove('active');
                     } else {
                         content.style.maxHeight = content.scrollHeight + 'px';
+                        this.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
                         this.classList.add('active');
                     }
                 });
