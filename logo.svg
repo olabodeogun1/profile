@@ -1,0 +1,17 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 714 222" width="130" height="40">
+	<title>olabode-favicon</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 50px;line-height: 70px;fill: #ffffff;font-weight: 700;font-family: "IbarraRealNova-Bold", "Ibarra Real Nova" } 
+		.t1 { font-size: 134px;line-height: 70px;fill: #68d0fb;font-weight: 400;font-family: "Meddon", "Meddon" } 
+		.t2 { font-size: 102px;line-height: 70px;fill: #68d0fb;font-weight: 300;font-family: "Miama", "Miama" } 
+	</style>
+	<text id="OGUN" style="transform: matrix(1,0,0,1,396,210)" >
+		<tspan x="0" y="0" class="t0" dx="0" >O</tspan><tspan  y="0" class="t0" dx="0" >G</tspan><tspan  y="0" class="t0" dx="0" >U</tspan><tspan  y="0" class="t0" dx="0 30" >N
+</tspan>
+	</text>
+	<text id="Olabode" style="transform: matrix(1.494,0,0,1.494,125.606,187.265)" >
+		<tspan x="0" y="0" class="t1" dx="0" >O</tspan><tspan  y="0" class="t2" dx="0" >l</tspan><tspan  y="0" class="t2" dx="0" >a</tspan><tspan  y="0" class="t2" dx="0" >b</tspan><tspan  y="0" class="t2" dx="0" >o</tspan><tspan  y="0" class="t2" dx="0" >d</tspan><tspan  y="0" class="t2" dx="0 10" >e
+</tspan>
+	</text>
+</svg>
